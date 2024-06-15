@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(39, 18, 3, 0.336);
+}
+
+.container {
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.pencil_body {
+    width: 100px;
+    height: 485px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: rotate(-45deg);
+    z-index: 1;
+    animation: rotatePencil 5s infinite linear;
+}
+
+@keyframes rotatePencil {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.Top_eraser {
+    width: 100px;
+    height: 45px;
+    background-color: #ce30a6;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    animation: pulseEraser 2s infinite;
+}
+
+@keyframes pulseEraser {
+    0%, 100% {
+        transform: scale(1);
+        background-color: #ce30a6;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #e060b8;
+    }
+}
+
+.Top_cap {
+    width: 100px;
+    height: 40px;
+    background-color: #C0C0C0;
+}
+
+.side {
+    width: 33.33%;
+    height: 300px;
+    position: absolute;
+    animation: changeColor 4s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        background-color: #ffc700;
+    }
+    50% {
+        background-color: #fed700;
+    }
+}
+
+.side1 {
+    left: 0;
+    background-color: #ffc700;
+}
+
+.side2 {
+    left: 33.33%;
+    background-color: #fed700;
+}
+
+.side3 {
+    left: 66.66%;
+    background-color: #fad700;
+}
+
+.side:after {
+    content: '';
+    width: 24px;
+    height: 22px;
+    background-color: inherit;
+    position: absolute;
+    bottom: -12px;
+    border-radius: 0 0 0 22px;
+    transform: rotate(-44deg);
+    left: 5px;
+    z-index: 1;
+}
+
+.trim_body {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #eca553;
+    position: absolute;
+    top: 385px;
+}
+
+.end_lid {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #656564;
+    position: absolute;
+    top: 445px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.line {
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    animation: drawLine 3s forwards;
+}
+
+.line2 {
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    animation: drawLine 3s forwards;
+    animation-delay: 1s;
+}
+
+.line3 {
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+    animation: drawLine 3s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 500px;
+    }
+}
